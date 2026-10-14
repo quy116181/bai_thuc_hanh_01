@@ -1,1 +1,33 @@
+#include <stdio.h>
 
+int main() {
+    long long a, b;
+    long long tich, r;
+    long long uscln, bscnn;
+
+    printf("Nhap vao so nguyen duong a: ");
+    scanf("%lld", &a);
+    printf("Nhap vao so nguyen duong b: ");
+    scanf("%lld", &b);
+
+    if (a <= 0 || b <= 0) {
+        printf("Vui long nhap hai so nguyen DUONG!\n");
+        return 1;
+    }
+
+    tich = a * b;
+
+    while (b != 0) {
+        r = a % b;
+        a = b;
+        b = r;
+    }
+    
+    uscln = a; 
+    bscnn = tich / uscln;
+
+    printf("Uoc so chung lon nhat (USCLN) la: %lld\n", uscln);
+    printf("Boi so chung nho nhat (BSCNN) la: %lld\n", bscnn);
+
+    return 0;
+}
